@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-ZfINbhOCXLqWs5/Qzg63HcHtY2dSsO7Wtbf2zIGNvVc='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; manifest-src 'self'; require-trusted-types-for 'script'">
+<title>Security policy · Vignesh Prasad</title>
+<meta name="description" content="Security policy. Case file VP-26-001, Vignesh Prasad.">
+
+<meta name="color-scheme" content="dark light">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/assets/icon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/icon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="stylesheet" href="/styles.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}document.documentElement.classList.replace('no-js','js')})()</script>
+<script src="/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead" role="banner">
+  <div class="masthead-row">
+    <a class="file-no" href="/"><span class="file-no-label">Case file</span><span class="file-no-id">VP-26-001</span></a>
+    <p class="masthead-status"><span class="stamp-inline">Security policy</span></p>
+    <div class="masthead-controls">
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme" title="Toggle light / dark">
+        <svg class="ico ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+        <svg class="ico ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<main id="main" class="page">
+<p class="eyebrow"><span>Vulnerability disclosure</span></p>
+<h1 class="page-h">Security policy for this site</h1>
+<p class="prose-lead">This is a personal portfolio, but it is a security portfolio, so it is held to the standard it describes. If you find a weakness in it, I want to hear about it.</p>
+
+<h2>Scope</h2>
+<ul class="page-list">
+  <li>Everything served from this origin: the HTML, CSS, JavaScript, headers and the files under <code>/.well-known/</code>.</li>
+  <li>The contact form, including attempts to bypass the honeypot or inject content into submissions.</li>
+</ul>
+<h2>Out of scope</h2>
+<ul class="page-list">
+  <li>Netlify, the hosting platform, and its own infrastructure. Report platform issues to Netlify directly.</li>
+  <li>Denial of service, volumetric testing and automated scanning that degrades the site for others.</li>
+  <li>Social engineering, phishing or physical attacks against the subject or anyone connected to him.</li>
+  <li>Reports that a header is "missing" on a local or third-party mirror; see the <a href="/#verify">verification panel</a> for what production sends.</li>
+</ul>
+<h2>How to report</h2>
+<ol class="page-list">
+  <li>Email the address listed in <a href="/.well-known/security.txt">security.txt</a> with a subject starting with <code>[security]</code>.</li>
+  <li>Include the URL, the steps to reproduce, and what you believe the impact is. A proof of concept is welcome; exfiltrating real data is not needed.</li>
+  <li>If the report is sensitive, encrypt it to the PGP key referenced from security.txt once it is published.</li>
+</ol>
+<h2>What to expect</h2>
+<ul class="page-list">
+  <li>Acknowledgement within 7 days.</li>
+  <li>A fix or a written explanation within 30 days for anything confirmed.</li>
+  <li>Credit on this page, if you want it, once the issue is closed.</li>
+</ul>
+<h2>Safe harbour</h2>
+<p class="prose-lead">Research carried out in good faith, within the scope above, that avoids privacy violations, data destruction and service disruption, will not lead to legal action from the subject. If in doubt, ask first.</p>
+<p class="page-meta">Last revised 2026-10-26 · also published as <code>SECURITY.md</code> in the source repository.</p>
+</main>
+<footer class="colophon page-foot"><p><span class="file-no-id">VP-26-001</span> · © 2026 Vignesh Prasad</p><p class="colophon-links"><a href="/">Back to the file</a><a href="/.well-known/security.txt">security.txt</a></p></footer>
+</body>
+</html>

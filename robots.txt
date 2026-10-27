@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /exhibit-0/
+Disallow: /sent/
+
+Sitemap: https://vignesh-prasad.example/sitemap.xml

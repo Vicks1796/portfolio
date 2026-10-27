@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!--
+  CASE FILE VP-26-001
+  Exhibit 0 was never filed. People who read source tend to find it anyway: /exhibit-0/
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'sha256-ZfINbhOCXLqWs5/Qzg63HcHtY2dSsO7Wtbf2zIGNvVc='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'none'; object-src 'none'; manifest-src 'self'; require-trusted-types-for 'script'">
+<title>Vignesh Prasad · Case file</title>
+<meta name="description" content="Vignesh Prasad, cybersecurity engineer in training at Stevens Institute of Technology. Compliance frameworks, web application penetration testing, IoT and embedded security. Read the case file.">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0c0e">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3efe6">
+<meta name="referrer" content="no-referrer">
+<link rel="canonical" href="https://vignesh-prasad.example/">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Vignesh Prasad · Case file VP-26-001">
+<meta property="og:description" content="Cybersecurity engineer in training. Compliance frameworks, web pentesting, IoT and embedded security. Declassified.">
+<meta property="og:url" content="https://vignesh-prasad.example/">
+<meta property="og:image" content="https://vignesh-prasad.example/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Case file cover sheet for Vignesh Prasad, cybersecurity engineer in training">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/icon/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icon/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/geist-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}document.documentElement.classList.replace('no-js','js')})()</script>
+<script src="/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#summary">Skip to the summary</a>
+
+<header class="masthead" role="banner">
+  <div class="masthead-row">
+    <a class="file-no" href="#top" aria-label="Case file VP-26-001, back to top">
+      <span class="file-no-label">Case file</span>
+      <span class="file-no-id">VP-26-001</span>
+    </a>
+    <p class="masthead-status" aria-label="File status">
+      <span class="stamp-inline">Declassified</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <span>Public release · rev. 2026-10-26</span>
+    </p>
+    <div class="masthead-controls">
+      <label class="switch" for="declassify">
+        <input type="checkbox" id="declassify" class="switch-input" aria-label="Declassify all redactions">
+        <span class="switch-track" aria-hidden="true"><span class="switch-knob"></span></span>
+        <span class="switch-text">Declassify all</span>
+      </label>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to light theme" title="Toggle light / dark">
+        <svg class="ico ico-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg>
+        <svg class="ico ico-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.5A8.5 8.5 0 0 1 8.5 4a8.5 8.5 0 1 0 11.5 11.5Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="dossier" id="top">
+
+  <nav class="index" aria-label="File index">
+    <p class="index-title">Index</p>
+    <ol class="index-list">
+      <li><a href="#summary"><span class="idx">01</span>Summary</a></li>
+      <li><a href="#exhibits"><span class="idx">02</span>Exhibits</a></li>
+      <li><a href="#custody"><span class="idx">03</span>Chain of custody</a></li>
+      <li><a href="#surface"><span class="idx">04</span>Attack surface</a></li>
+      <li><a href="#credentials"><span class="idx">05</span>Credentials</a></li>
+      <li><a href="#locations"><span class="idx">06</span>Known locations</a></li>
+      <li><a href="#verify"><span class="idx">07</span>Verify this file</a></li>
+      <li><a href="#disclosure"><span class="idx">08</span>Disclosure</a></li>
+    </ol>
+    <p class="index-foot"><a href="/.well-known/security.txt">security.txt</a> · <a href="/security/">policy</a></p>
+  </nav>
+
+  <main id="main">
+
+    <!-- ===== COVER SHEET ===== -->
+    <section class="cover" aria-labelledby="cover-h">
+      <div class="cover-grid">
+        <div class="cover-main">
+          <p class="eyebrow"><span class="eyebrow-key">Subject</span></p>
+          <h1 id="cover-h" class="subject-name">Vignesh<br>Prasad</h1>
+          <p class="subject-role">Cybersecurity engineer in training</p>
+          <dl class="facts">
+            <div class="fact"><dt>Status</dt><dd><span class="live-dot" aria-hidden="true"></span>Active · M.S. Cybersecurity, Stevens Institute of Technology</dd></div>
+            <div class="fact"><dt>Location</dt><dd>Hoboken, New Jersey</dd></div>
+            <div class="fact"><dt>Focus</dt><dd>Compliance frameworks · Web application pentesting · IoT and embedded security</dd></div>
+            <div class="fact"><dt>Origin</dt><dd>Hardware. Sensors, PCBs, IC design, then the controls that keep them safe.</dd></div>
+          </dl>
+          <div class="cover-actions">
+            <a class="btn btn-primary" href="#exhibits">Open exhibits</a>
+            <a class="btn" href="https://www.linkedin.com/in/vicksprasad" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <figure class="id-photo">
+          <div class="id-frame">
+            <img src="/assets/img/portrait.jpg" alt="Vignesh Prasad" width="420" height="420" decoding="async" fetchpriority="high">
+            <span class="reg reg-tl" aria-hidden="true"></span><span class="reg reg-tr" aria-hidden="true"></span><span class="reg reg-bl" aria-hidden="true"></span><span class="reg reg-br" aria-hidden="true"></span>
+          </div>
+          <figcaption><span class="exh-no">Exhibit A</span> Subject photograph</figcaption>
+          <div class="stamp stamp-cover" aria-hidden="true"><span>Declassified</span><small>2026 · public release</small></div>
+        </figure>
+      </div>
+
+      <pre class="hexdump" aria-hidden="true">00000000  43 41 53 45 20 46 49 4c  45 20 56 50 2d 32 36 2d  |CASE FILE VP-26-|
+00000010  30 30 31 0a 53 55 42 4a  45 43 54 3a 20 56 49 47  |001.SUBJECT: VIG|
+00000020  4e 45 53 48 20 50 52 41  53 41 44 0a 53 54 41 54  |NESH PRASAD.STAT|
+00000030  55 53 3a 20 41 43 54 49  56 45 0a 43 4c 41 53 53  |US: ACTIVE.CLASS|
+00000040  3a 20 50 55 42 4c 49 43  0a 00 00 00 00 00 00 00  |: PUBLIC........|</pre>
+    </section>
+
+    <!-- ===== 01 SUMMARY ===== -->
+    <section class="sec" id="summary" aria-labelledby="summary-h">
+      <header class="sec-head">
+        <span class="sec-no">01</span>
+        <h2 id="summary-h">Summary of findings</h2>
+        <p class="sec-hint">Hover, tap or focus a redaction to read it. Or flip <em>Declassify all</em> in the header.</p>
+      </header>
+      <div class="prose">
+        <p>The subject came to security from the hardware side: <span class="redact" tabindex="0">railway axle-counter sensors</span>, <span class="redact" tabindex="0">PCB and IC floor planning</span>, and a string of IoT builds that talk to the physical world. That background shows in how he approaches a system. He wants to know where the signal enters, which component trusts which, and what happens when one of them lies.</p>
+        <p>Since 2024 the work has been on the other side of the boundary: <span class="redact" tabindex="0">standardising security rule sets for financial institutions</span> at Aujas, streamlining the <abbr title="National Cybersecurity Authority Essential Cybersecurity Controls">NCA ECC</abbr>, <abbr title="National Cybersecurity Authority Critical Systems Cybersecurity Controls">NCA CSCC</abbr> and <abbr title="Cloud Cybersecurity Controls">CCC</abbr> frameworks, and testing web applications the way an attacker would.</p>
+        <p>He is now completing an M.S. in Cybersecurity at Stevens Institute of Technology in Hoboken, with a focus on security fundamentals, networking and applied cybersecurity. Current interests: <span class="redact" tabindex="0">compliance and regulatory frameworks</span>, <span class="redact" tabindex="0">web application penetration testing</span>, and <span class="redact" tabindex="0">securing IoT and embedded systems</span>.</p>
+      </div>
+      <aside class="note placeholder" aria-label="Material still to be supplied">
+        <p class="note-label">Pending material</p>
+        <p>Certifications, CTF write-ups, résumé link and GitHub profile have not been filed yet. Sections below mark where each one will go.</p>
+      </aside>
+    </section>
+
+    <!-- ===== 02 EXHIBITS ===== -->
+    <section class="sec" id="exhibits" aria-labelledby="exhibits-h">
+      <header class="sec-head">
+        <span class="sec-no">02</span>
+        <h2 id="exhibits-h">Exhibits</h2>
+        <p class="sec-hint">Builds collected as evidence. Each bag is sealed with its parts list.</p>
+      </header>
+
+      <ul class="evidence" role="list">
+        <li class="bag">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Exhibit 01</span>
+            <span class="bag-type">Embedded · aviation</span>
+          </div>
+          <h3>Cockpit White Box</h3>
+          <p>A collision-prevention system for aircraft. RF sensors and a NodeMCU monitor speed, altitude, direction and temperature, then transmit the readings to air-traffic control to support a safe landing.</p>
+          <dl class="bag-meta">
+            <dt>Contents</dt><dd>RF sensors · NodeMCU · Telemetry link</dd>
+            <dt>Risk studied</dt><dd>Loss of situational awareness on approach</dd>
+          </dl>
+        </li>
+
+        <li class="bag">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Exhibit 02</span>
+            <span class="bag-type">IoT · computer vision</span>
+          </div>
+          <h3>IoT Smart Parking</h3>
+          <p>Detects free parking spots and prevents vehicle theft by recognising number plates at entry and exit, so a car can only leave with the plate it arrived with.</p>
+          <dl class="bag-meta">
+            <dt>Contents</dt><dd>IoT sensors · Plate recognition · Gate control</dd>
+            <dt>Risk studied</dt><dd>Vehicle theft and spoofed exits</dd>
+          </dl>
+        </li>
+
+        <li class="bag">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Exhibit 03</span>
+            <span class="bag-type">Robotics · control</span>
+          </div>
+          <h3>Line Follower Robot</h3>
+          <p>An Arduino robot that tracks a visual line on the floor for fully automated movement. A small closed loop: sense, decide, steer, repeat.</p>
+          <dl class="bag-meta">
+            <dt>Contents</dt><dd>Arduino · IR sensor array · Motor driver</dd>
+            <dt>Risk studied</dt><dd>Sensor noise and loss of track</dd>
+          </dl>
+        </li>
+
+        <li class="bag">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Exhibit 04</span>
+            <span class="bag-type">Automation · fluids</span>
+          </div>
+          <h3>Juice Mixer</h3>
+          <p>An automated mixer with separate water and juice tanks, solenoid valves and a stirrer, for an even mix every time without a hand on the tap.</p>
+          <dl class="bag-meta">
+            <dt>Contents</dt><dd>Solenoid valves · Stirrer motor · Timing logic</dd>
+            <dt>Risk studied</dt><dd>Valve fail-open and overflow</dd>
+          </dl>
+        </li>
+
+        <li class="bag placeholder">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Exhibit 05</span>
+            <span class="bag-type">Reserved</span>
+          </div>
+          <h3>CTF write-ups and security projects</h3>
+          <p>Reserved for capture-the-flag write-ups, lab reports or tooling the subject wants on record. Filed once received.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 03 CHAIN OF CUSTODY ===== -->
+    <section class="sec" id="custody" aria-labelledby="custody-h">
+      <header class="sec-head">
+        <span class="sec-no">03</span>
+        <h2 id="custody-h">Chain of custody</h2>
+        <p class="sec-hint">Who had the subject, when, and what was logged. Newest entry first.</p>
+      </header>
+
+      <ol class="custody" role="list">
+        <li class="entry entry-current">
+          <div class="entry-when">
+            <time datetime="2025-01">Jan 2025</time><span class="arrow" aria-hidden="true">→</span><span class="now">present</span>
+            <span class="kind">Graduate study</span>
+          </div>
+          <div class="entry-body">
+            <h3>Stevens Institute of Technology</h3>
+            <p class="entry-org">M.S. Cybersecurity · Hoboken, NJ</p>
+            <ul>
+              <li>Security fundamentals, networking and applied cybersecurity.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-when">
+            <time datetime="2024-03">Mar 2024</time><span class="arrow" aria-hidden="true">→</span><time datetime="2024-12">Dec 2024</time>
+            <span class="kind">Internship</span>
+          </div>
+          <div class="entry-body">
+            <h3>Cybersecurity Intern</h3>
+            <p class="entry-org">Aujas Cybersecurity · Bengaluru</p>
+            <ul>
+              <li>Implemented standardised security rules aligned with industry practice for financial institutions.</li>
+              <li>Streamlined the NCA ECC, NCA CSCC and CCC rule sets for operational efficiency.</li>
+              <li>Worked across multiple cybersecurity frameworks to protect critical systems against threats.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-when">
+            <time datetime="2024-01">Jan 2024</time><span class="arrow" aria-hidden="true">→</span><time datetime="2024-03">Mar 2024</time>
+            <span class="kind">Internship</span>
+          </div>
+          <div class="entry-body">
+            <h3>Software Intern</h3>
+            <p class="entry-org">Accenture Innovations · Bengaluru</p>
+            <ul>
+              <li>Built full-stack Java web applications with Servlets, HTML, CSS and JavaScript.</li>
+              <li>Ran a case study to optimise a medical appointment booking system.</li>
+              <li>Analysed patient data and routed structured information to specialist physicians.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-when">
+            <time datetime="2022-12">Dec 2022</time><span class="arrow" aria-hidden="true">→</span><time datetime="2023-06">Jun 2023</time>
+            <span class="kind">Full-time</span>
+          </div>
+          <div class="entry-body">
+            <h3>Operations Coordinator</h3>
+            <p class="entry-org">Spykke Innovations · Bengaluru</p>
+            <ul>
+              <li>Managed power-bank inventory and readiness across retail outlets throughout India.</li>
+              <li>Reported on station health across malls, restaurants, theatres and metro stations.</li>
+              <li>Handled tagging, de-tagging and station testing.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-when">
+            <time datetime="2022-04">Apr 2022</time><span class="arrow" aria-hidden="true">→</span><time datetime="2022-07">Jul 2022</time>
+            <span class="kind">Internship</span>
+          </div>
+          <div class="entry-body">
+            <h3>Design Intern</h3>
+            <p class="entry-org">Tessolve Semiconductor · Bengaluru</p>
+            <ul>
+              <li>Worked on floor planning, power planning and clock tree synthesis for IC chips.</li>
+              <li>Gained PCB, system and IC design experience; scripted in Perl, Tcl and shell.</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="entry">
+          <div class="entry-when">
+            <time datetime="2019-12">Dec 2019</time><span class="arrow" aria-hidden="true">→</span><time datetime="2020-01">Jan 2020</time>
+            <span class="kind">Internship</span>
+          </div>
+          <div class="entry-body">
+            <h3>Engineer Intern</h3>
+            <p class="entry-org">Frauscher Sensor Technology · Mysore</p>
+            <ul>
+              <li>Designed, implemented and evaluated sensors for railway axle counters.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== 04 ATTACK SURFACE ===== -->
+    <section class="sec" id="surface" aria-labelledby="surface-h">
+      <header class="sec-head">
+        <span class="sec-no">04</span>
+        <h2 id="surface-h">Attack surface</h2>
+        <p class="sec-hint">A threat model of the subject's skills: the assets he has defended, the controls he applies, and where they meet.</p>
+      </header>
+
+      <figure class="tm">
+        <svg class="tm-svg" viewBox="0 0 960 560" role="img" aria-labelledby="tm-title tm-desc">
+          <title id="tm-title">Threat model of Vignesh Prasad's skills</title>
+          <desc id="tm-desc">Three nested trust boundaries: the internet, the organisation and the physical device. Inside them sit a web application, financial institution systems and an embedded IoT device. An external attacker has paths to the web application and the device. Six controls the subject applies surround the assets: web penetration testing, NCA ECC, NCA CSCC and CCC compliance, networking, cloud controls, secure development, and firmware and sensor design. Dashed lines connect each control to the asset it protects.</desc>
+          <defs>
+            <marker id="tm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tm-arrowhead"/></marker>
+          </defs>
+
+          <!-- trust boundaries -->
+          <rect class="tm-boundary" x="24" y="24" width="912" height="512" rx="10"/>
+          <text class="tm-bound-label" x="40" y="48">TRUST BOUNDARY · INTERNET</text>
+          <rect class="tm-boundary" x="296" y="96" width="420" height="408" rx="8"/>
+          <text class="tm-bound-label" x="312" y="118">ORGANISATION</text>
+          <rect class="tm-boundary tm-boundary-inner" x="322" y="350" width="368" height="134" rx="6"/>
+          <text class="tm-bound-label" x="338" y="372">PHYSICAL DEVICE</text>
+
+          <!-- attack paths -->
+          <g class="tm-edges">
+            <line x1="172" y1="150" x2="338" y2="158" marker-end="url(#tm-arrow)"/>
+            <line x1="160" y1="176" x2="338" y2="414" marker-end="url(#tm-arrow)"/>
+            <line x1="440" y1="190" x2="480" y2="258"/>
+            <line x1="440" y1="396" x2="480" y2="322"/>
+            <!-- controls -->
+            <line class="tm-edge-ctrl" x1="794" y1="150" x2="520" y2="160"/>
+            <line class="tm-edge-ctrl" x1="794" y1="290" x2="612" y2="290"/>
+            <line class="tm-edge-ctrl" x1="794" y1="426" x2="520" y2="426"/>
+            <line class="tm-edge-ctrl" x1="176" y1="290" x2="338" y2="176"/>
+            <line class="tm-edge-ctrl" x1="176" y1="426" x2="338" y2="426"/>
+          </g>
+
+          <!-- threat actor -->
+          <g class="tm-actor" transform="translate(140 150)">
+            <circle r="32"/>
+            <text class="tm-node-label" y="4">ATTACKER</text>
+            <text class="tm-node-sub" y="54">external · unauthenticated</text>
+          </g>
+
+          <!-- assets -->
+          <g class="tm-asset" transform="translate(430 160)">
+            <rect x="-92" y="-30" width="184" height="60" rx="4"/>
+            <text class="tm-node-label" y="-3">WEB APPLICATION</text>
+            <text class="tm-node-sub" y="16">Java Servlets · HTML · JS</text>
+          </g>
+          <g class="tm-asset" transform="translate(500 290)">
+            <rect x="-112" y="-30" width="224" height="60" rx="4"/>
+            <text class="tm-node-label" y="-3">FINANCIAL INSTITUTION SYSTEMS</text>
+            <text class="tm-node-sub" y="16">critical · regulated</text>
+          </g>
+          <g class="tm-asset" transform="translate(430 426)">
+            <rect x="-92" y="-30" width="184" height="60" rx="4"/>
+            <text class="tm-node-label" y="-3">EMBEDDED / IoT DEVICE</text>
+            <text class="tm-node-sub" y="16">NodeMCU · Arduino · RF</text>
+          </g>
+
+          <!-- controls the subject applies -->
+          <g class="tm-ctrl" transform="translate(830 150)">
+            <path d="M0-32l36 13v23c0 19-15 32-36 40-21-8-36-21-36-40v-23z"/>
+            <text class="tm-node-label" y="4">WEB PENTEST</text>
+            <text class="tm-node-sub" y="62">application testing</text>
+          </g>
+          <g class="tm-ctrl" transform="translate(830 290)">
+            <path d="M0-32l36 13v23c0 19-15 32-36 40-21-8-36-21-36-40v-23z"/>
+            <text class="tm-node-label" y="4">COMPLIANCE</text>
+            <text class="tm-node-sub" y="62">NCA ECC · CSCC · CCC</text>
+          </g>
+          <g class="tm-ctrl" transform="translate(830 426)">
+            <path d="M0-32l36 13v23c0 19-15 32-36 40-21-8-36-21-36-40v-23z"/>
+            <text class="tm-node-label" y="4">NETWORKING</text>
+            <text class="tm-node-sub" y="62">segmentation · protocols</text>
+          </g>
+          <g class="tm-ctrl" transform="translate(140 290)">
+            <path d="M0-32l36 13v23c0 19-15 32-36 40-21-8-36-21-36-40v-23z"/>
+            <text class="tm-node-label" y="4">SECURE DEV</text>
+            <text class="tm-node-sub" y="62">Java · Python · C/C++</text>
+          </g>
+          <g class="tm-ctrl" transform="translate(140 426)">
+            <path d="M0-32l36 13v23c0 19-15 32-36 40-21-8-36-21-36-40v-23z"/>
+            <text class="tm-node-label" y="4">FIRMWARE</text>
+            <text class="tm-node-sub" y="62">PCB · IC · VHDL · RF</text>
+          </g>
+        </svg>
+        <figcaption>
+          <span class="tm-key"><span class="tm-swatch tm-swatch-asset" aria-hidden="true"></span>Asset</span>
+          <span class="tm-key"><span class="tm-swatch tm-swatch-ctrl" aria-hidden="true"></span>Control the subject applies</span>
+          <span class="tm-key"><span class="tm-swatch tm-swatch-edge" aria-hidden="true"></span>Attack path</span>
+          <span class="tm-key"><span class="tm-swatch tm-swatch-bound" aria-hidden="true"></span>Trust boundary</span>
+        </figcaption>
+      </figure>
+
+      <div class="toolkit">
+        <div class="tk">
+          <h3>Security</h3>
+          <p>Web penetration testing · NCA ECC · NCA CSCC · CCC · security frameworks for financial institutions</p>
+        </div>
+        <div class="tk">
+          <h3>Languages</h3>
+          <p>Python · Java · C/C++ · JavaScript · HTML/CSS · VHDL · Perl · Tcl · Shell</p>
+        </div>
+        <div class="tk">
+          <h3>Hardware &amp; embedded</h3>
+          <p>Arduino · NodeMCU · RF sensors · PCB design · IC floor and power planning · clock tree synthesis</p>
+        </div>
+        <div class="tk">
+          <h3>Web</h3>
+          <p>Java Servlets · full-stack Java web apps · HTML · CSS · JavaScript</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 05 CREDENTIALS ===== -->
+    <section class="sec" id="credentials" aria-labelledby="credentials-h">
+      <header class="sec-head">
+        <span class="sec-no">05</span>
+        <h2 id="credentials-h">Credentials</h2>
+        <p class="sec-hint">Issued by institutions on record.</p>
+      </header>
+
+      <ul class="creds" role="list">
+        <li class="cred">
+          <img class="cred-logo" src="/assets/img/stevens-logo.png" alt="" width="220" height="220" loading="lazy" decoding="async">
+          <div>
+            <h3>Stevens Institute of Technology</h3>
+            <p class="cred-deg">M.S. Cybersecurity</p>
+            <p class="cred-when"><time datetime="2025-01">Jan 2025</time> → present · Hoboken, NJ</p>
+            <p class="cred-note">Security fundamentals, networking, applied cybersecurity.</p>
+          </div>
+        </li>
+        <li class="cred">
+          <img class="cred-logo" src="/assets/img/iiitb-logo.png" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div>
+            <h3>Simplilearn · IIIT Bengaluru</h3>
+            <p class="cred-deg">Post Graduate Advanced Executive Program in Cybersecurity</p>
+            <p class="cred-when"><time datetime="2023-08">Aug 2023</time></p>
+          </div>
+        </li>
+        <li class="cred">
+          <img class="cred-logo" src="/assets/img/bms-logo.png" alt="" width="200" height="200" loading="lazy" decoding="async">
+          <div>
+            <h3>BMS College of Engineering</h3>
+            <p class="cred-deg">B.E. Electronics and Instrumentation</p>
+            <p class="cred-when"><time datetime="2022-10">Oct 2022</time> · Bengaluru</p>
+          </div>
+        </li>
+        <li class="cred placeholder">
+          <span class="cred-logo cred-logo-empty" aria-hidden="true">?</span>
+          <div>
+            <h3>Certifications</h3>
+            <p class="cred-deg">Not yet on file</p>
+            <p class="cred-note">Reserved for industry certifications (for example OSCP, CEH, Security+) once confirmed. Nothing is listed here that has not been verified.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== 06 LOCATIONS ===== -->
+    <section class="sec" id="locations" aria-labelledby="locations-h">
+      <header class="sec-head">
+        <span class="sec-no">06</span>
+        <h2 id="locations-h">Known locations</h2>
+        <p class="sec-hint">Gulf-raised, Bangalore-rooted, New Jersey-based.</p>
+      </header>
+
+      <ul class="places" role="list">
+        <li class="place">
+          <img src="/assets/img/oman.webp" alt="Coastline and mountains in Oman" width="880" height="518" loading="lazy" decoding="async">
+          <div class="place-cap"><span class="place-years">2000 → 2015</span><h3>Oman</h3></div>
+        </li>
+        <li class="place">
+          <img src="/assets/img/bangalore.webp" alt="Street scene in Bangalore, India" width="922" height="511" loading="lazy" decoding="async">
+          <div class="place-cap"><span class="place-years">2015 → 2025</span><h3>Bangalore, India</h3></div>
+        </li>
+        <li class="place">
+          <img src="/assets/img/hoboken.webp" alt="Hoboken waterfront with the Manhattan skyline" width="854" height="472" loading="lazy" decoding="async">
+          <div class="place-cap"><span class="place-years">2025 → now</span><h3>Hoboken, NJ</h3></div>
+        </li>
+      </ul>
+      <p class="prose-sm">Off duty: a PS4, English series, friends, and whichever football or tennis match is on.</p>
+    </section>
+
+    <!-- ===== 07 VERIFY ===== -->
+    <section class="sec" id="verify" aria-labelledby="verify-h">
+      <header class="sec-head">
+        <span class="sec-no">07</span>
+        <h2 id="verify-h">Verify this file</h2>
+        <p class="sec-hint">A security portfolio should be able to prove its own claims. These panels inspect the page you are reading right now.</p>
+      </header>
+
+      <div class="verify-grid">
+
+        <!-- header audit -->
+        <article class="panel" id="headers" aria-labelledby="headers-h">
+          <div class="panel-head">
+            <h3 id="headers-h">Response header audit</h3>
+            <span class="grade" id="hdr-grade" aria-live="polite">—</span>
+          </div>
+          <p class="panel-desc">Fetches this page's own HTTP response and grades the security headers it finds. Headers come from <code>netlify.toml</code>, so they appear only when served through Netlify or the bundled local server.</p>
+          <table class="hdr-table" id="hdr-table">
+            <thead><tr><th scope="col">Header</th><th scope="col">Expectation</th><th scope="col">Result</th></tr></thead>
+            <tbody>
+              <tr data-h="content-security-policy"><th scope="row">Content-Security-Policy</th><td>default-src 'none', no unsafe-inline scripts, frame-ancestors 'none', Trusted Types</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="strict-transport-security"><th scope="row">Strict-Transport-Security</th><td>max-age ≥ 1 year, includeSubDomains, preload</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="x-frame-options"><th scope="row">X-Frame-Options</th><td>DENY</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="x-content-type-options"><th scope="row">X-Content-Type-Options</th><td>nosniff</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="referrer-policy"><th scope="row">Referrer-Policy</th><td>no-referrer</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="permissions-policy"><th scope="row">Permissions-Policy</th><td>camera, microphone, geolocation and sensors denied</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="cross-origin-opener-policy"><th scope="row">Cross-Origin-Opener-Policy</th><td>same-origin</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="cross-origin-resource-policy"><th scope="row">Cross-Origin-Resource-Policy</th><td>same-origin</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="cross-origin-embedder-policy"><th scope="row">Cross-Origin-Embedder-Policy</th><td>require-corp</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="x-permitted-cross-domain-policies"><th scope="row">X-Permitted-Cross-Domain-Policies</th><td>none</td><td class="hdr-res">pending</td></tr>
+              <tr data-h="_transport"><th scope="row">Transport</th><td>HTTPS, no third-party requests</td><td class="hdr-res">pending</td></tr>
+            </tbody>
+          </table>
+          <div class="panel-actions">
+            <button class="btn btn-sm" type="button" id="hdr-run">Run audit</button>
+            <span class="panel-status" id="hdr-status" aria-live="polite"></span>
+          </div>
+          <noscript><p class="panel-noscript">Scripts are off, so the audit cannot run here. Check the same headers from a terminal:</p><pre class="snippet">curl -sI https://vignesh-prasad.example/ | sort</pre></noscript>
+        </article>
+
+        <!-- integrity -->
+        <article class="panel" id="integrity" aria-labelledby="integrity-h">
+          <div class="panel-head">
+            <h3 id="integrity-h">Page integrity</h3>
+            <span class="grade" id="int-grade" aria-live="polite">—</span>
+          </div>
+          <p class="panel-desc">The SHA-256 of the HTML your browser received, computed in your browser with Web Crypto, next to the digest recorded at build time. If they match, nothing changed in transit.</p>
+          <dl class="hash-list">
+            <div><dt>Served</dt><dd><code class="hash" id="hash-served">pending</code></dd></div>
+            <div><dt>Published</dt><dd><code class="hash" id="hash-published">pending</code></dd></div>
+          </dl>
+          <div class="panel-actions">
+            <button class="btn btn-sm" type="button" id="int-run">Recompute</button>
+            <span class="panel-status" id="int-status" aria-live="polite"></span>
+          </div>
+          <p class="panel-desc">Independently, from a terminal:</p>
+          <pre class="snippet">curl -s https://vignesh-prasad.example/index.html | shasum -a 256</pre>
+        </article>
+
+        <!-- pgp -->
+        <article class="panel panel-pgp placeholder" id="pgp" aria-labelledby="pgp-h">
+          <div class="panel-head">
+            <h3 id="pgp-h">PGP fingerprint</h3>
+            <span class="grade grade-na">pending</span>
+          </div>
+          <p class="panel-desc">Forty hex characters, laid out as a grid so a fingerprint is easy to compare by eye. The grid below is a placeholder until the subject's public key is on file.</p>
+          <div class="hexgrid" id="hexgrid" aria-label="PGP fingerprint, placeholder" role="img">
+            <span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span>
+            <span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span>
+          </div>
+          <p class="panel-desc">Key file: <a href="/pgp.asc">/pgp.asc</a> · referenced from <a href="/.well-known/security.txt">security.txt</a>.</p>
+        </article>
+
+        <!-- what this site does -->
+        <article class="panel" id="hardening" aria-labelledby="hardening-h">
+          <div class="panel-head">
+            <h3 id="hardening-h">How this file is hardened</h3>
+          </div>
+          <ul class="hardening">
+            <li>No third-party resources. Fonts, styles and scripts are served from this origin, so there is nothing to tamper with upstream and no one to leak your visit to.</li>
+            <li>Strict Content Security Policy, sent as a header and repeated in a <code>&lt;meta&gt;</code> tag. One inline script, allowed by hash, sets your theme before paint. No inline event handlers anywhere.</li>
+            <li>Trusted Types required for scripts: the page's own JavaScript never builds HTML from strings.</li>
+            <li>Every outbound link carries <code>rel="noopener noreferrer"</code>, and the referrer policy is <em>no-referrer</em>.</li>
+            <li>No analytics, no cookies, no tracking pixels. Your theme choice is kept in your own browser's local storage and nowhere else.</li>
+            <li>Contact form carries a honeypot field that humans never see. Email copy uses a fixed string, never page content.</li>
+            <li>Works with JavaScript disabled: redactions, the theme that follows your system, the index, the form and every link.</li>
+            <li>Vulnerability disclosure path published in <a href="/.well-known/security.txt">security.txt</a> and <a href="/security/">the policy page</a>.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 08 DISCLOSURE ===== -->
+    <section class="sec" id="disclosure" aria-labelledby="disclosure-h">
+      <header class="sec-head">
+        <span class="sec-no">08</span>
+        <h2 id="disclosure-h">Disclosure</h2>
+        <p class="sec-hint">Open a line to the subject, or report a weakness in this file.</p>
+      </header>
+
+      <div class="disclosure-grid">
+        <div class="contact">
+          <h3>Contact</h3>
+          <div class="contact-row">
+            <code class="email" id="email">vignesh1709@gmail.com</code>
+            <button class="btn btn-sm" type="button" id="copy-email" data-email="vignesh1709@gmail.com">Copy</button>
+            <span class="panel-status" id="copy-status" aria-live="polite"></span>
+          </div>
+          <ul class="handles" role="list">
+            <li><a href="mailto:vignesh1709@gmail.com?subject=Case%20file%20VP-26-001">Email <span aria-hidden="true">→</span></a></li>
+            <li><a href="https://www.linkedin.com/in/vicksprasad" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+            <li class="placeholder-inline"><span>GitHub · to be supplied</span></li>
+            <li class="placeholder-inline"><span>Résumé (PDF) · to be supplied</span></li>
+          </ul>
+          <details class="pgp-block placeholder">
+            <summary>PGP public key</summary>
+            <pre class="snippet">-----BEGIN PGP PUBLIC KEY BLOCK-----
+[ to be supplied: paste the armoured public key here and in /pgp.asc ]
+-----END PGP PUBLIC KEY BLOCK-----</pre>
+          </details>
+        </div>
+
+        <form class="form" name="contact" method="POST" action="/sent/" data-netlify="true" netlify-honeypot="company" aria-labelledby="form-h">
+          <h3 id="form-h">Leave a message</h3>
+          <input type="hidden" name="form-name" value="contact">
+          <p class="trap" aria-hidden="true">
+            <label for="company">Company (leave blank)</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off">
+          </p>
+          <div class="field">
+            <label for="f-name">Name</label>
+            <input type="text" id="f-name" name="name" required autocomplete="name" maxlength="120">
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" maxlength="254">
+          </div>
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" required rows="5" maxlength="4000"></textarea>
+          </div>
+          <div class="field field-row">
+            <button class="btn btn-primary" type="submit">Send</button>
+            <p class="form-note">Delivered by Netlify Forms. No tracking, no third-party scripts.</p>
+          </div>
+        </form>
+
+        <aside class="report">
+          <h3>Found something wrong with this file?</h3>
+          <p>If you find a vulnerability in this site, read <a href="/security/">the disclosure policy</a> and write to the address in <a href="/.well-known/security.txt">security.txt</a>. Good-faith research is welcome. Reports are acknowledged within seven days.</p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="colophon">
+    <p><span class="file-no-id">VP-26-001</span> · © 2026 Vignesh Prasad · Hoboken, NJ</p>
+    <p class="colophon-links">
+      <a href="/.well-known/security.txt">security.txt</a>
+      <a href="/security/">Security policy</a>
+      <a href="/robots.txt">robots.txt</a>
+      <a href="#top">Top of file</a>
+    </p>
+    <p class="colophon-note">Hand-written HTML and CSS. No framework, no build step for the page itself, no third parties.</p>
+  </footer>
+
+</div>
+</body>
+</html>
