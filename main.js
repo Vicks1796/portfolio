@@ -332,6 +332,151 @@
     grid.setAttribute('aria-label', 'PGP fingerprint ' + fp.replace(/(.{4})/g, '$1 ').trim());
   })();
 
+  /* ---------- trace field: the dot grid becomes a live substrate ----------
+     Thin PCB-style traces route themselves across the grid at right angles, a single packet
+     runs along each, then they fade. Runs only without prefers-reduced-motion, pauses when the
+     tab is hidden, and the CSS dot grid remains as the fallback. Canvas only, no DOM strings. */
+  (function traceField() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!doc.body || !window.requestAnimationFrame) return;
+    var cv = doc.createElement('canvas');
+    cv.className = 'trace-field';
+    cv.setAttribute('aria-hidden', 'true');
+    doc.body.insertBefore(cv, doc.body.firstChild);
+    root.classList.add('has-field');
+    var ctx = cv.getContext('2d', { alpha: true });
+    if (!ctx) { cv.remove(); root.classList.remove('has-field'); return; }
+
+    var CELL = 28, W = 0, H = 0, cols = 0, rows = 0, dpr = 1;
+    var col = { ink: '#e9e6df', accent: '#ff5c4a' };
+    var traces = [], lastSpawn = 0, lastFrame = 0, lastStep = 0;
+    var pointer = { x: -1e4, y: -1e4, active: false };
+    var running = false, raf = 0;
+
+    function readColors() {
+      var cs = getComputedStyle(root);
+      col.ink = cs.getPropertyValue('--ink').trim() || col.ink;
+      col.accent = cs.getPropertyValue('--accent').trim() || col.accent;
+    }
+    function size() {
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = window.innerWidth; H = window.innerHeight;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      cv.style.width = W + 'px'; cv.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      cols = Math.ceil(W / CELL) + 1; rows = Math.ceil(H / CELL) + 1;
+      traces.length = 0;
+    }
+    function rnd(n) { return Math.floor(Math.random() * n); }
+    var DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+
+    function spawn() {
+      var d = rnd(4);
+      traces.push({
+        pts: [[rnd(cols), rnd(rows)]], dir: d, maxLen: 8 + rnd(22),
+        phase: 'grow', alpha: 0, hold: 1800 + rnd(2200), t: 0, packet: 0
+      });
+    }
+    function step(now) {
+      // grow every ~55ms, independent of frame rate
+      if (now - lastStep < 55) return;
+      lastStep = now;
+      for (var i = traces.length - 1; i >= 0; i--) {
+        var tr = traces[i];
+        if (tr.phase === 'grow') {
+          tr.alpha = Math.min(1, tr.alpha + 0.12);
+          if (Math.random() < 0.16) tr.dir = (tr.dir + (Math.random() < 0.5 ? 1 : 3)) % 4;
+          var last = tr.pts[tr.pts.length - 1];
+          var nx = last[0] + DIRS[tr.dir][0], ny = last[1] + DIRS[tr.dir][1];
+          if (nx < 0 || ny < 0 || nx >= cols || ny >= rows || tr.pts.length >= tr.maxLen) { tr.phase = 'hold'; tr.t = now; }
+          else tr.pts.push([nx, ny]);
+        } else if (tr.phase === 'hold') {
+          tr.packet = Math.min(1, (now - tr.t) / tr.hold);
+          if (now - tr.t > tr.hold) { tr.phase = 'fade'; tr.t = now; }
+        } else {
+          tr.alpha -= 0.05;
+          if (tr.alpha <= 0) traces.splice(i, 1);
+        }
+      }
+      var cap = Math.max(4, Math.min(10, Math.round((W * H) / 160000)));
+      if (traces.length < cap && now - lastSpawn > 650) { spawn(); lastSpawn = now; }
+    }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      // dots
+      ctx.fillStyle = col.ink;
+      var px = pointer.x, py = pointer.y, R = 150, R2 = R * R;
+      for (var c = 0; c < cols; c++) {
+        for (var r = 0; r < rows; r++) {
+          var x = c * CELL + 1, y = r * CELL + 1, a = 0.13, sz = 1.2;
+          if (pointer.active) {
+            var dx = x - px, dy = y - py, d2 = dx * dx + dy * dy;
+            if (d2 < R2) { var k = 1 - Math.sqrt(d2) / R; a += 0.45 * k; sz += 0.9 * k; }
+          }
+          ctx.globalAlpha = a;
+          ctx.fillRect(x - sz / 2, y - sz / 2, sz, sz);
+        }
+      }
+      // traces
+      ctx.lineWidth = 1; ctx.lineJoin = 'miter'; ctx.lineCap = 'butt';
+      for (var i = 0; i < traces.length; i++) {
+        var tr = traces[i], pts = tr.pts;
+        if (pts.length < 2) continue;
+        ctx.globalAlpha = 0.28 * tr.alpha; ctx.strokeStyle = col.ink;
+        ctx.beginPath(); ctx.moveTo(pts[0][0] * CELL + 1, pts[0][1] * CELL + 1);
+        for (var j = 1; j < pts.length; j++) ctx.lineTo(pts[j][0] * CELL + 1, pts[j][1] * CELL + 1);
+        ctx.stroke();
+        // vias at the two ends
+        ctx.globalAlpha = 0.5 * tr.alpha; ctx.fillStyle = col.ink;
+        var e0 = pts[0], e1 = pts[pts.length - 1];
+        ctx.fillRect(e0[0] * CELL - 1, e0[1] * CELL - 1, 4, 4);
+        ctx.fillRect(e1[0] * CELL - 1, e1[1] * CELL - 1, 4, 4);
+        // packet: a short bright run that travels the trace while it holds
+        if (tr.phase === 'hold' || tr.phase === 'fade') {
+          var segs = pts.length - 1, pos = tr.packet * segs, len = 2.5;
+          var s0 = Math.max(0, pos - len), s1 = pos;
+          ctx.globalAlpha = 0.9 * tr.alpha; ctx.strokeStyle = col.accent; ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          var started = false;
+          for (var k2 = Math.floor(s0); k2 <= Math.min(segs - 1, Math.floor(s1)); k2++) {
+            var a0 = Math.max(s0, k2) - k2, a1 = Math.min(s1, k2 + 1) - k2;
+            var p0 = pts[k2], p1 = pts[k2 + 1];
+            var x0 = (p0[0] + (p1[0] - p0[0]) * a0) * CELL + 1, y0 = (p0[1] + (p1[1] - p0[1]) * a0) * CELL + 1;
+            var x1 = (p0[0] + (p1[0] - p0[0]) * a1) * CELL + 1, y1 = (p0[1] + (p1[1] - p0[1]) * a1) * CELL + 1;
+            if (!started) { ctx.moveTo(x0, y0); started = true; }
+            ctx.lineTo(x1, y1);
+          }
+          ctx.stroke(); ctx.lineWidth = 1;
+        }
+      }
+      ctx.globalAlpha = 1;
+    }
+    function frame(now) {
+      raf = 0;
+      if (!running) return;
+      if (now - lastFrame >= 33) { // ~30 fps is plenty for this
+        lastFrame = now; step(now); draw();
+      }
+      raf = requestAnimationFrame(frame);
+    }
+    function start() { if (running) return; running = true; if (!raf) raf = requestAnimationFrame(frame); }
+    function stop() { running = false; if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+
+    readColors(); size();
+    var resizeT = 0;
+    window.addEventListener('resize', function () { clearTimeout(resizeT); resizeT = setTimeout(size, 120); }, { passive: true });
+    window.addEventListener('pointermove', function (e) {
+      if (e.pointerType === 'touch') return;
+      pointer.x = e.clientX; pointer.y = e.clientY; pointer.active = true;
+    }, { passive: true });
+    window.addEventListener('pointerleave', function () { pointer.active = false; });
+    doc.addEventListener('visibilitychange', function () { doc.hidden ? stop() : start(); });
+    new MutationObserver(readColors).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+    matchMedia('(prefers-color-scheme: light)').addEventListener('change', readColors);
+    // start after first paint has had its turn
+    if ('requestIdleCallback' in window) requestIdleCallback(start, { timeout: 1500 }); else setTimeout(start, 400);
+  })();
+
   /* ---------- exhibit 0 ---------- */
   (function exhibitZero() {
     var style = 'font-family: ui-monospace, Menlo, monospace; font-size: 12px;';

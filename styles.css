@@ -159,6 +159,10 @@ button { font: inherit; color: inherit; }
 }
 .skip:focus { top: 12px; }
 
+/* trace field (drawn by main.js; the body dot grid stays as the no-JS fallback) */
+.trace-field { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+.has-field body { background-image: none; }
+
 /* mono labels used everywhere */
 .mono, .eyebrow, .exh-no, .sec-no, .kind, .file-no, .idx, .bag-type, .place-years, .cred-when,
 .index-title, .index-list, .index-foot, .masthead-status, .switch-text, .grade, .hdr-table,
@@ -320,7 +324,7 @@ main { min-width: 0; padding-bottom: 80px; }
 
 .hexdump {
   margin: 44px 0 0; padding: 14px 0 0; border-top: 1px dashed var(--line);
-  font-size: 0.68rem; line-height: 1.5; color: var(--faint); overflow: hidden; white-space: pre;
+  font-size: 0.68rem; line-height: 1.5; color: var(--muted); overflow: hidden; white-space: pre;
   user-select: none;
 }
 
@@ -389,7 +393,7 @@ body:has(#declassify:checked) .redact {
 .open-head { margin: 40px 0 18px; display: grid; gap: 6px; }
 .open-head h3 { font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
 .open-head .sec-hint { grid-column: 1; }
-.bag-open { background: transparent; box-shadow: none; border-style: dashed; }
+.bag-open { background: color-mix(in srgb, var(--bg) 78%, transparent); box-shadow: none; border-style: dashed; }
 .bag-open:hover { transform: none; }
 .bag-open .bag-seal { opacity: 0.18; }
 .bag-open h3 { color: var(--ink-2); }
@@ -599,7 +603,11 @@ body:has(#declassify:checked) .redact {
   .places { grid-template-columns: 1fr; }
   .disclosure-grid { grid-template-columns: 1fr; }
   .fact { grid-template-columns: 1fr; gap: 4px; }
-  .hexdump { font-size: 0.6rem; }
+  .hexdump { font-size: 0.75rem; }
+  /* legibility floor on phones: nothing below 12px */
+  .snippet, .hash, .fp, .hexgrid span, .idx, .kind, .bag-type, .bag-status, .exh-no, .sec-no, .fact dt, .bag-meta dt, .bag-meta, .cred-when, .place-years,
+  .file-no-label, .index-list, .switch-text, .hdr-table, .hdr-table thead th, .hdr-table td:nth-child(2), .hash-list dt, .panel-status, .form-note,
+  .colophon, .tm-key, .tm figcaption, .field label, .note-label, .eyebrow, .pgp-block summary, .pgp-block .snippet, .entry-org, .entry-when, .index-foot, .stamp small, .placeholder::after, .page-meta { font-size: 0.76rem; }
   .tm { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tm-svg { min-width: 640px; }
 }
