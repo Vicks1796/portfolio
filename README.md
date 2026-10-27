@@ -22,6 +22,7 @@ sent/index.html         thank-you page after the contact form
 404.html                served by Netlify for unknown paths
 robots.txt, sitemap.xml, site.webmanifest, pgp.asc
 assets/img              portrait, school logos, the three places
+assets/Vignesh_Prasad_Resume.pdf   résumé, linked from the cover and Disclosure
 assets/icon             favicon.svg + PNG sizes (generated from the SVG)
 assets/og.png           1200×630 social card (generated from scripts/og.html)
 fonts/                  Geist and Geist Mono, self-hosted (SIL Open Font License 1.1)
@@ -84,7 +85,6 @@ Search for `placeholder` in `index.html`. Each spot is outlined on the page with
   `grep -rl "vignesh-prasad.example" . | xargs sed -i '' 's#vignesh-prasad.example#REAL.DOMAIN#g'`
 - **PGP**: replace `pgp.asc`, set `data-fingerprint="<40 hex chars>"` on `#hexgrid` in `index.html`,
   remove the `placeholder` class from that panel and the `<details>` block, then sign `security.txt`.
-- **Résumé PDF**: the `placeholder-inline` item under Disclosure.
 - **Certifications**: the last entry under Credentials.
 - **CTF write-ups / security projects**: Exhibit 05.
 
