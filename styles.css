@@ -532,7 +532,7 @@ body:has(#declassify:checked) .redact {
 .pgp-block { margin-top: 18px; padding: 10px 12px; border-radius: var(--radius); }
 .pgp-block summary { cursor: pointer; font-family: var(--mono); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
 .pgp-block summary:hover { color: var(--ink); }
-.pgp-block .snippet { margin-top: 10px; }
+.pgp-block .snippet { margin-top: 10px; white-space: pre-wrap; word-break: break-all; font-size: 0.68rem; user-select: all; }
 
 .form { display: grid; gap: 14px; align-content: start; }
 .trap { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
