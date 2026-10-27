@@ -385,6 +385,18 @@ body:has(#declassify:checked) .redact {
 .bag.placeholder { background: transparent; box-shadow: none; }
 .bag.placeholder h3 { color: var(--muted); }
 
+/* open investigations: planned work, clearly marked */
+.open-head { margin: 40px 0 18px; display: grid; gap: 6px; }
+.open-head h3 { font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); }
+.open-head .sec-hint { grid-column: 1; }
+.bag-open { background: transparent; box-shadow: none; border-style: dashed; }
+.bag-open:hover { transform: none; }
+.bag-open .bag-seal { opacity: 0.18; }
+.bag-open h3 { color: var(--ink-2); }
+.bag-status { color: var(--warn); font-family: var(--mono); font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.evidence-open { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 1024px) { .evidence-open { grid-template-columns: 1fr; } }
+
 /* ---------- chain of custody ---------- */
 .custody { list-style: none; margin: 0; padding: 0; position: relative; }
 .custody::before { content: ""; position: absolute; left: 196px; top: 8px; bottom: 8px; width: 1px; background: var(--line-2); }

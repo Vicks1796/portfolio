@@ -228,6 +228,52 @@
         </li>
 
       </ul>
+
+      <div class="open-head">
+        <h3 id="open-h">Open investigations</h3>
+        <p class="sec-hint">Cases the subject has opened but not closed. Listed so the file shows direction as well as history. Each gets its own exhibit when it is done.</p>
+      </div>
+      <ul class="evidence evidence-open" role="list" aria-labelledby="open-h">
+        <li class="bag bag-open">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Case A</span>
+            <span class="bag-status">Open · in progress</span>
+          </div>
+          <h3>NCA control mapper</h3>
+          <p>A small open-source tool that maps NCA ECC and CSCC controls to ISO 27001 and NIST CSF, flags overlaps, and exports a gap checklist. Turns the rule-set work from Aujas into something anyone can run.</p>
+          <dl class="bag-meta">
+            <dt>Planned</dt><dd>Python · JSON control catalogue · static web view · CSV export</dd>
+            <dt>Closes when</dt><dd>Mappings published for all ECC domains with a worked example</dd>
+          </dl>
+        </li>
+        <li class="bag bag-open">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Case B</span>
+            <span class="bag-status">Open · in progress</span>
+          </div>
+          <h3>Telemetry link hardening</h3>
+          <p>Revisiting the Cockpit White Box link as an attacker: threat model, replay and spoofing tests against the NodeMCU telemetry, then authenticated and encrypted transport with a before-and-after write-up.</p>
+          <dl class="bag-meta">
+            <dt>Planned</dt><dd>NodeMCU · MQTT over TLS · HMAC-signed frames · attack scripts</dd>
+            <dt>Closes when</dt><dd>Replay and spoof attempts fail on the hardened build, with evidence</dd>
+          </dl>
+        </li>
+        <li class="bag bag-open">
+          <div class="bag-seal" aria-hidden="true"></div>
+          <div class="bag-head">
+            <span class="exh-no">Case C</span>
+            <span class="bag-status">Open · in progress</span>
+          </div>
+          <h3>Web application assessment report</h3>
+          <p>A full penetration test of a deliberately vulnerable application, written as a client-ready report: scope, methodology, findings mapped to the OWASP Top 10, CVSS scores and remediation.</p>
+          <dl class="bag-meta">
+            <dt>Planned</dt><dd>OWASP Juice Shop · Burp Suite · CVSS 3.1 · report PDF</dd>
+            <dt>Closes when</dt><dd>Report published with at least ten verified findings</dd>
+          </dl>
+        </li>
+      </ul>
     </section>
 
     <!-- ===== 03 CHAIN OF CUSTODY ===== -->
