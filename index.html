@@ -575,6 +575,7 @@
           </div>
           <p class="panel-desc">Fetches this page's own HTTP response and grades the security headers it finds. Headers come from <code>netlify.toml</code>, so they appear only when served through Netlify or the bundled local server.</p>
           <table class="hdr-table" id="hdr-table">
+            <colgroup><col class="c-h"><col class="c-e"><col class="c-r"></colgroup>
             <thead><tr><th scope="col">Header</th><th scope="col">Expectation</th><th scope="col">Result</th></tr></thead>
             <tbody>
               <tr data-h="content-security-policy"><th scope="row">Content-Security-Policy</th><td>default-src 'none', no unsafe-inline scripts, frame-ancestors 'none', Trusted Types</td><td class="hdr-res">pending</td></tr>

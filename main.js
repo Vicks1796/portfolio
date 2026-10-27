@@ -219,7 +219,16 @@
     fetch(url, { method: 'HEAD', cache: 'no-store', credentials: 'omit' })
       .then(function (r) { if (!r.ok) throw new Error('HEAD ' + r.status); return r; })
       .catch(function () { return fetch(url, { method: 'GET', cache: 'no-store', credentials: 'omit' }); })
-      .then(function (r) { apply(r.headers, transportResult()); })
+      .then(function (r) {
+        if (r.status === 401 || r.status === 403) {
+          var rows = table.querySelectorAll('tbody tr[data-h] .hdr-res');
+          for (var i = 0; i < rows.length; i++) { rows[i].setAttribute('data-state', 'warn'); setText(rows[i], 'not visible'); }
+          grade.setAttribute('data-grade', 'B'); setText(grade, '?');
+          setText(status, 'The server answered ' + r.status + '. Visitor protection is on, so this audit only sees the login page. Make the site public and run it again.');
+          return;
+        }
+        apply(r.headers, transportResult());
+      })
       .catch(function (err) {
         setText(status, 'Could not fetch this page: ' + (err && err.message ? err.message : 'network error'));
         grade.setAttribute('data-grade', 'F'); setText(grade, '?');
@@ -246,6 +255,7 @@
     grade.removeAttribute('data-grade'); setText(grade, '…');
 
     var htmlP = fetch('/index.html', { cache: 'no-store', credentials: 'omit' }).then(function (r) {
+      if (r.status === 401 || r.status === 403) throw new Error('index.html ' + r.status + ': visitor protection is on, make the site public first');
       if (!r.ok) throw new Error('index.html ' + r.status);
       return r.text();
     }).then(sha256);
