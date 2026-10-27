@@ -81,8 +81,8 @@ header-only.
 
 Search for `placeholder` in `index.html`. Each spot is outlined on the page with a "to be supplied" tag:
 
-- **Domain**: every `https://vignesh-prasad.example` must become the real origin.
-  `grep -rl "vignesh-prasad.example" . | xargs sed -i '' 's#vignesh-prasad.example#REAL.DOMAIN#g'`
+- **Domain**: every `https://vignesh-prasad.netlify.app` must become the real origin.
+  `grep -rl "vignesh-prasad.netlify.app" . | xargs sed -i '' 's#vignesh-prasad.netlify.app#REAL.DOMAIN#g'`
 - **PGP**: replace `pgp.asc`, set `data-fingerprint="<40 hex chars>"` on `#hexgrid` in `index.html`,
   remove the `placeholder` class from that panel and the `<details>` block, then sign `security.txt`.
 - **Certifications**: the last entry under Credentials.

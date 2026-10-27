@@ -2,7 +2,7 @@
 # RFC 9116. Unsigned until the PGP key below is published; then signed with it.
 Contact: mailto:vignesh1709@gmail.com
 Expires: 2027-10-26T00:00:00.000Z
-Encryption: https://vignesh-prasad.example/pgp.asc
+Encryption: https://vignesh-prasad.netlify.app/pgp.asc
 Preferred-Languages: en
-Canonical: https://vignesh-prasad.example/.well-known/security.txt
-Policy: https://vignesh-prasad.example/security/
+Canonical: https://vignesh-prasad.netlify.app/.well-known/security.txt
+Policy: https://vignesh-prasad.netlify.app/security/
