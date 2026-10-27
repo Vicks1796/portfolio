@@ -265,8 +265,19 @@
       return r.json();
     }).then(function (j) { return j && j.files && j.files['index.html'] ? String(j.files['index.html']) : null; }, function () { return null; });
 
-    Promise.all([htmlP, pubP]).then(function (res) {
-      var s = res[0], p = res[1];
+    // Hosting platforms sometimes add their own markup at the edge (Netlify's free-tier badge
+    // script is one). Strip the known patterns and hash again, so the panel can say exactly
+    // what changed instead of a bare mismatch.
+    function stripHostInjection(html) {
+      var removed = [];
+      var out = html.replace(/<!--\s*This site is hosted on Netlify[\s\S]*?-->\n?/g, function () { removed.push('Netlify hosting comment'); return ''; });
+      out = out.replace(/<script[^>]*src="\/\.netlify\/scripts\/hud[^"]*"[^>]*><\/script>\n?/g, function () { removed.push('Netlify badge script'); return ''; });
+      return { html: out, removed: removed };
+    }
+    var htmlTextP = fetch('/index.html', { cache: 'no-store', credentials: 'omit' }).then(function (r) { return r.ok ? r.text() : ''; });
+
+    Promise.all([htmlP, pubP, htmlTextP]).then(function (res) {
+      var s = res[0], p = res[1], raw = res[2];
       setText(served, s);
       if (!p) {
         setText(published, 'not published (integrity.json is written at build time)');
@@ -276,11 +287,26 @@
       }
       setText(published, p);
       var match = s === p.toLowerCase();
-      served.setAttribute('data-state', match ? 'ok' : 'bad');
-      published.setAttribute('data-state', match ? 'ok' : 'bad');
-      grade.setAttribute('data-grade', match ? 'A' : 'F');
-      setText(grade, match ? 'MATCH' : 'DIFF');
-      setText(status, match ? 'The HTML you received is byte-identical to the build.' : 'Digests differ. The page may have been modified in transit or cached from an older build.');
+      if (match) {
+        served.setAttribute('data-state', 'ok'); published.setAttribute('data-state', 'ok');
+        grade.setAttribute('data-grade', 'A'); setText(grade, 'MATCH');
+        setText(status, 'The HTML you received is byte-identical to the build.');
+        return;
+      }
+      var stripped = stripHostInjection(raw);
+      if (stripped.removed.length) {
+        return sha256(stripped.html).then(function (s2) {
+          var ok = s2 === p.toLowerCase();
+          served.setAttribute('data-state', ok ? 'warn' : 'bad'); published.setAttribute('data-state', ok ? 'warn' : 'bad');
+          grade.setAttribute('data-grade', ok ? 'B' : 'F'); setText(grade, ok ? 'HOST-MODIFIED' : 'DIFF');
+          setText(status, ok
+            ? 'The host added content at the edge (' + stripped.removed.join(', ') + '). With those lines removed, the page is byte-identical to the build. Nothing in the authored HTML changed.'
+            : 'Digests differ even after removing host-added content. The page may have been modified in transit or cached from an older build.');
+        });
+      }
+      served.setAttribute('data-state', 'bad'); published.setAttribute('data-state', 'bad');
+      grade.setAttribute('data-grade', 'F'); setText(grade, 'DIFF');
+      setText(status, 'Digests differ. The page may have been modified in transit or cached from an older build.');
     }).catch(function (err) {
       setText(status, 'Could not compute: ' + (err && err.message ? err.message : 'error'));
       grade.setAttribute('data-grade', 'F'); setText(grade, '?');

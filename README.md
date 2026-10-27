@@ -71,6 +71,7 @@ These only appear when served through Netlify (or `scripts/serve.py`), never fro
 | `integrity.json` and the MATCH verdict | written by the build (served live by `serve.py`) |
 | SRI attributes on `styles.css` / `main.js` | injected by the build, not committed |
 | Contact form delivery | Netlify Forms |
+| "Powered by Netlify" badge script injected into the HTML on Free plans | turn it off under Project configuration, General, Powered by Netlify badge; while it is on, the integrity panel reports HOST-MODIFIED and the CSP blocks the badge from rendering |
 | `/404.html` for unknown paths, `X-Robots-Tag` on hidden pages | Netlify routing and headers |
 
 The `<meta http-equiv="Content-Security-Policy">` in each page is a fallback for any host that

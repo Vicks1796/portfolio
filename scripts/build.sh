@@ -42,9 +42,10 @@ sri() { openssl dgst -sha384 -binary "$1" | openssl base64 -A; }
 CSS_SRI=$(sri styles.css)
 JS_SRI=$(sri main.js)
 for f in $HTML_FILES; do
-  sed -i.bak \
-    -e "s#<link rel=\"stylesheet\" href=\"/styles.css\"\( integrity=\"[^\"]*\"\)\?>#<link rel=\"stylesheet\" href=\"/styles.css\" integrity=\"sha384-${CSS_SRI}\">#" \
-    -e "s#<script src=\"/main.js\" defer\( integrity=\"[^\"]*\"\)\?></script>#<script src=\"/main.js\" defer integrity=\"sha384-${JS_SRI}\"></script>#" \
+  # -E so the optional group works in both GNU sed (Netlify) and BSD sed (macOS)
+  sed -E -i.bak \
+    -e "s#<link rel=\"stylesheet\" href=\"/styles.css\"( integrity=\"[^\"]*\")?>#<link rel=\"stylesheet\" href=\"/styles.css\" integrity=\"sha384-${CSS_SRI}\">#" \
+    -e "s#<script src=\"/main.js\" defer( integrity=\"[^\"]*\")?></script>#<script src=\"/main.js\" defer integrity=\"sha384-${JS_SRI}\"></script>#" \
     "$f" && rm -f "$f.bak"
 done
 echo "build: SRI injected (styles sha384-$CSS_SRI)"
