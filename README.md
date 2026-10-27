@@ -77,13 +77,11 @@ The `<meta http-equiv="Content-Security-Policy">` in each page is a fallback for
 drops headers; `frame-ancestors` cannot be set in a meta tag, so clickjacking protection is
 header-only.
 
-## Still to be supplied
+## Keys
 
-Search for `placeholder` in `index.html`. Each spot is outlined on the page with a "to be supplied" tag:
-
-- **PGP public key**: replace `pgp.asc` with the exported key, paste the same block into the
-  `<details>` under Disclosure and drop its `placeholder` class, then sign `security.txt`. The
-  fingerprint is already wired into the hex grid.
+`pgp.asc` is Vignesh Prasad's public key (Ed25519, fingerprint 3FFC 96E6 D32D FEE4 6942 F4DD 3B77
+6631 3AFB 8147). The same block is shown under Disclosure and the fingerprint under Verify. If the
+key is ever rotated, replace all three places and re-sign `security.txt`.
 
 ## Security features, in short
 

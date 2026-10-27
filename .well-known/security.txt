@@ -1,5 +1,5 @@
 # Security contact for the site "Case file VP-26-001" (Vignesh Prasad)
-# RFC 9116. Unsigned until the PGP key below is published; then signed with it.
+# RFC 9116. Key: https://vignesh-prasad.netlify.app/pgp.asc  fingerprint 3FFC 96E6 D32D FEE4 6942 F4DD 3B77 6631 3AFB 8147
 Contact: mailto:vignesh1709@gmail.com
 Expires: 2027-10-26T00:00:00.000Z
 Encryption: https://vignesh-prasad.netlify.app/pgp.asc
