@@ -513,7 +513,8 @@ body:has(#declassify:checked) .redact {
 .hexgrid { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 4px; font-family: var(--mono); }
 .hexgrid span { display: grid; place-items: center; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 3px; font-size: 0.72rem; color: var(--ink-2); background: var(--bg); }
 .hexgrid span:nth-child(10n+1) { border-left-color: var(--accent-line); }
-.panel-pgp .hexgrid span { color: var(--faint); }
+.panel-pgp .hexgrid span { color: var(--ink); }
+.fp { display: block; font-size: 0.74rem; letter-spacing: 0.06em; color: var(--ink-2); word-break: break-all; user-select: all; }
 
 .hardening { margin: 0; padding-left: 18px; display: grid; gap: 10px; font-size: 0.9rem; color: var(--ink-2); }
 .hardening li::marker { color: var(--accent); }

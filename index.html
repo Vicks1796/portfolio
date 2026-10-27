@@ -617,16 +617,17 @@
         </article>
 
         <!-- pgp -->
-        <article class="panel panel-pgp placeholder" id="pgp" aria-labelledby="pgp-h">
+        <article class="panel panel-pgp" id="pgp" aria-labelledby="pgp-h">
           <div class="panel-head">
             <h3 id="pgp-h">PGP fingerprint</h3>
-            <span class="grade grade-na">pending</span>
+            <span class="grade grade-na">Ed25519 · cv25519</span>
           </div>
-          <p class="panel-desc">Forty hex characters, laid out as a grid so a fingerprint is easy to compare by eye. The grid below is a placeholder until the subject's public key is on file.</p>
-          <div class="hexgrid" id="hexgrid" aria-label="PGP fingerprint, placeholder" role="img">
-            <span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span>
-            <span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span><span>??</span>
+          <p class="panel-desc">Forty hex characters, laid out as a grid so a fingerprint is easy to compare by eye against the key you import. Read it row by row.</p>
+          <div class="hexgrid" id="hexgrid" data-fingerprint="3FFC96E6D32DFEE46942F4DD3B7766313AFB8147" aria-label="PGP fingerprint 3FFC 96E6 D32D FEE4 6942 F4DD 3B77 6631 3AFB 8147" role="img">
+            <span>3F</span><span>FC</span><span>96</span><span>E6</span><span>D3</span><span>2D</span><span>FE</span><span>E4</span><span>69</span><span>42</span>
+            <span>F4</span><span>DD</span><span>3B</span><span>77</span><span>66</span><span>31</span><span>3A</span><span>FB</span><span>81</span><span>47</span>
           </div>
+          <p class="panel-desc"><code class="fp">3FFC 96E6 D32D FEE4 6942 F4DD 3B77 6631 3AFB 8147</code></p>
           <p class="panel-desc">Key file: <a href="/pgp.asc">/pgp.asc</a> · referenced from <a href="/.well-known/security.txt">security.txt</a>.</p>
         </article>
 

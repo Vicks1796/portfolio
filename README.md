@@ -81,8 +81,9 @@ header-only.
 
 Search for `placeholder` in `index.html`. Each spot is outlined on the page with a "to be supplied" tag:
 
-- **PGP**: replace `pgp.asc`, set `data-fingerprint="<40 hex chars>"` on `#hexgrid` in `index.html`,
-  remove the `placeholder` class from that panel and the `<details>` block, then sign `security.txt`.
+- **PGP public key**: replace `pgp.asc` with the exported key, paste the same block into the
+  `<details>` under Disclosure and drop its `placeholder` class, then sign `security.txt`. The
+  fingerprint is already wired into the hex grid.
 
 ## Security features, in short
 
